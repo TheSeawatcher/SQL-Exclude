@@ -6,7 +6,7 @@
 		foreach($columns_object as $key=>$column){
 		 	$columns .= $column->COLUMN_NAME.",";
 		 }
-		 rtrim($columns,",");
+		 $columns = rtrim($columns,",");
 		 $sql = $wpdb->prepare("SELECT %s FROM %s",$columns,$this->prefix.$table_name);
 	     return($wpdb->get_results($sql));	
 	}
